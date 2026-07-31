@@ -40,6 +40,13 @@ const manageSpinner =(status) => {
   }
 }
 
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
+
 const loadLevelWords = (id) => {
   manageSpinner(true);
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
@@ -120,7 +127,7 @@ const displayLevelWords = (words) => {
       <div class="font-semibold text-xl font-bangla"> ${word.meaning ? word.meaning : "not available"}/${word.Pronunciation ? word.Pronunciation : "not available"}</div>
       <div class="flex justify-between ">
         <button onclick="loadWordDetails(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-circle-info"></i></button>
-        <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-volume"></i></button>
+        <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-volume"></i></button>
       </div>
     </div>`;
     levelWordContainer.append(levelWordDiv);
