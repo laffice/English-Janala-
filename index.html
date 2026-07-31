@@ -89,9 +89,41 @@
     </div>
   </section>
 
-  <section id="level-words-container" class=" my-10 max-w-[1300px] mx-auto p-5 bg-gray-100 grid grid-cols-3 gap-5  items-center rounded-xl">
-   
+  <section id="spinner" class="flex justify-center items-center py-10 hidden">
+    <span class="loading loading-spinner text-primary"></span>
   </section>
+
+  <section id="level-words-container" class=" my-10 max-w-[1300px] mx-auto p-5 bg-gray-100 grid grid-cols-3 gap-5  items-center rounded-xl">
+      <div class="font-bangla  text-center col-span-full py-14 space-y-8">
+        <p class="text-[14px] ">আপনি এখনো কোন Lesson Select করেন ন</p>
+        <h1 class="text-3xl font-semibold">একটি Lesson Select করুন।</h1>
+      </div>
+
+
+      
+  </section>
+
+
+
+  <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="details-container">
+     
+        
+  
+    </div> 
+    <div class="modal-action">
+      <form method="dialog">
+       
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
   <script src="script.js"></script>
 
 </body>
